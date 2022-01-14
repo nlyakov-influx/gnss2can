@@ -1,7 +1,7 @@
 var fs = require('fs');
 var readline = require('readline');
 const pipeinPath = '/dev/ttymxc1';
-const pipeoutPath =  'pipeout';//'/var/run/rexgen/can0/tx';
+const pipeoutPath =  '/var/run/rexgen/can0/tx';
 var pipeout = fs.createWriteStream(pipeoutPath);
 const debug = console.log; // Set to false to remove debug
 
