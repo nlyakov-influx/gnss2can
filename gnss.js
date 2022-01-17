@@ -1,7 +1,7 @@
 var fs = require('fs');
 var readline = require('readline');
 const pipeinPath = '/dev/ttymxc1';
-const pipeoutPath =  'pipeout';//'/var/run/rexgen/can0/tx';
+const pipeoutPath =  '/var/run/rexgen/can0/tx';
 var pipeout = fs.createWriteStream(pipeoutPath);
 const debug = console.log; // Set to false to remove debug
 
@@ -99,19 +99,6 @@ function parseCoordinate(degrees, minutes, direction)
 		coord*= -1;
 
 	return coord;
-}
-
-function PopulateString(data, params, defparams)
-{
-	var str = data;
-	for (var key in params)
-		if (params.hasOwnProperty(key))
-			str = str.replace(key, params[key]);
-	for (var key in defparams)
-		if (defparams.hasOwnProperty(key))
-			str = str.replace(key, defparams[key]);
-
-	return str;
 }
 
 function float32ToHexString(data, delimiter)
